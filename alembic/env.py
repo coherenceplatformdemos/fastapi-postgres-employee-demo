@@ -20,8 +20,27 @@ from app.models import Base  # Adjust the import to your actual models module
 # Set target_metadata for autogenerate support
 target_metadata = Base.metadata
 
+# Function to get database URL
+def get_url():
+    return (
+        f"postgresql://{os.getenv('DB_USER', 'fastapi_test_james')}:"
+        f"{os.getenv('DB_PASSWORD')}@"
+        f"{os.getenv('EMPLOYEES_HOST', '10.120.1.3')}:"
+        f"{os.getenv('EMPLOYEES_PORT', '5432')}/"
+        f"{os.getenv('DB_NAME', 'example')}"
+    )
+
 # Set SQLAlchemy URL
-config.set_main_option('sqlalchemy.url', f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}")
+config.set_main_option('sqlalchemy.url', get_url())
+
+# Debug logging
+print("Database connection details:")
+print(f"DB_USER: {os.getenv('DB_USER', 'fastapi_test_james')}")
+print(f"DB_PASSWORD: {'*' * len(os.getenv('DB_PASSWORD', ''))}")
+print(f"DB_HOST: {os.getenv('EMPLOYEES_HOST', '10.120.1.3')}")
+print(f"DB_PORT: {os.getenv('EMPLOYEES_PORT', '5432')}")
+print(f"DB_NAME: {os.getenv('DB_NAME', 'example')}")
+print(f"Full URL: {get_url()}")
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode."""
@@ -32,7 +51,6 @@ def run_migrations_offline() -> None:
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
     )
-
     with context.begin_transaction():
         context.run_migrations()
 
@@ -43,13 +61,11 @@ def run_migrations_online() -> None:
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
-
     with connectable.connect() as connection:
         context.configure(
             connection=connection,
             target_metadata=target_metadata
         )
-
         with context.begin_transaction():
             context.run_migrations()
 
