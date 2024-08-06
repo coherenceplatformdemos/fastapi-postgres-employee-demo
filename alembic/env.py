@@ -32,7 +32,7 @@ target_metadata = None
 # ... etc.
 
 # Set SQLAlchemy URL
-config.set_main_option('sqlalchemy.url', f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('EMPLOYEES_HOST')}/{os.getenv('DB_NAME')}")
+config.set_main_option('sqlalchemy.url', f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('EMPLOYEES_HOST')}/{os.getenv('employees')}")
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.
