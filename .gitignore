@@ -32,7 +32,6 @@ Thumbs.db
 *.log
 
 # Alembic
-alembic/versions/*
 !alembic/versions/.gitkeep
 
 # Temporary files
