@@ -1,6 +1,38 @@
-# FastAPI Employee Management App
 
-This project is a simple employee management application built with FastAPI, SQLAlchemy, and PostgreSQL. It provides a RESTful API for managing employee records and includes a basic web interface.
+<p align="center">
+  <a href="https://www.withcoherence.com">
+    <img alt="Coherence Logo" title="Coherence" src="./logo.png" width="400" style="color: black">
+  </a>
+</p>
+
+
+<p align="center">
+  <i>Platform-as-a-service in your own Cloud</i><br/> 
+  <a href="https://www.withcoherence.com">withcoherence.com</a>
+</p>
+
+<h1 align="center">
+FastAPI and Postgres Example
+</h1>
+
+<p align="center">
+<img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi">
+<img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white">
+</p>
+
+<br/>
+
+# Full stack FastAPI and Postgres application (employee management)
+
+<p>
+This is the code to accompany the tutorial available at our <a href="https://docs.withcoherence.com/coherence-templates/full-stack-template/?tabs=fastapi">Framework Guide (FastAPI)</a> page.
+</p>
+
+You can use it as a starting point for any full stack FastAPI application. Read the guide to see how to deploy it to a production environment in your own cloud, or see the instructions below to run a development version of it locally.
+
+## Getting Started 
+
+Fork the repository to your GitHub account. To test locally, clone the forked repository to your machine. You will need to have Docker installed.
 
 ## Prerequisites
 
@@ -56,60 +88,14 @@ Before you begin, ensure you have the following installed on your system:
 
 2. Open your web browser and navigate to `http://localhost:8000` to access the application.
 
-## API Documentation
+## Resources
 
-FastAPI provides automatic API documentation. You can access it by navigating to:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
+Take a look at the following for more information:
 
-## Project Structure
+* [Coherence](https://www.withcoherence.com)
+* [Why Choose Coherence](https://docs.withcoherence.com/#why-choose-coherence)
+* [Coherence Documentation](docs.withcoherence.com)
 
-```
-.
-├── alembic/
-│   └── versions/
-├── app/
-│   ├── models/
-│   ├── routes/
-│   ├── static/
-│   ├── templates/
-│   ├── database.py
-│   └── main.py
-├── .env
-├── .gitignore
-├── alembic.ini
-├── README.md
-└── requirements.txt
-```
+**Cloud Infrastructure On Autopilot**
 
-## Development
-
-To add new features or modify existing ones:
-
-1. Create a new branch:
-   ```
-   git checkout -b feature-branch-name
-   ```
-
-2. Make your changes and commit them:
-   ```
-   git add .
-   git commit -m "Description of changes"
-   ```
-
-3. Push your changes and create a pull request:
-   ```
-   git push origin feature-branch-name
-   ```
-
-## Testing
-
-(Note: Add information about running tests once you've set up a testing framework)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+_Deploy containerized and serverless apps to your own cloud in minutes, not weeks._
